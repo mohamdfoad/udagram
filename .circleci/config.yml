@@ -12,9 +12,10 @@ jobs:
       - image: "cimg/node:14.15"
     steps:
           # install node and checkout code
-      - checkout
+     
       - eb/setup
       - aws-cli/setup
+      - checkout
       
       - node/install:
           node-version: '14.15'         
