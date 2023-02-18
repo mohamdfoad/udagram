@@ -5,10 +5,8 @@ orbs:
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
   # different jobs are calles later in the workflows sections
-jobs:
-buildWDeploy:
-  docker:
-  - image: "cimg/node:14.15"
+jobs:buildWDeploy:
+    docker:- image: "cimg/node:14.15"
     steps:
     - eb/setup
     - aws-cli/setup
@@ -16,32 +14,32 @@ buildWDeploy:
     - node/install:
       node-version: '14.15'
       # Use root level package.json to install dependencies in the frontend app
-      - run:
+    - run:
           name: print node and npm versions
           command: |
             echo "NODE --version" 
             echo $(node --version)
             echo "NPM --version" 
             echo $(npm --version)
-      - run:
+    - run:
           name: Install API dependencies; build node_modules folder
           command: npm run api:install
-      - run:
+    - run:
           name: API build; Build www folder
           command: npm run api:build      
-      - run:
+    - run:
           name: API Deploy (EB CLI)
           command: npm run api:deploy
-      - run:
+    - run:
           name: Front-End Instal Depnedencies
           command: npm run frontend:install          
-      - run:
+    - run:
           name: Front-End Lint
           command: npm run frontend:lint
-      - run:
+    - run:
           name: Front-End Build (www angular folder)
           command: npm run frontend:build
-      - run:
+    - run:
           name: Front-End Deploy to S3 Bucket
           command: npm run frontend:deploy
 workflows:
