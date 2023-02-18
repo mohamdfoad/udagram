@@ -8,14 +8,14 @@ orbs:
 jobs:
   buildWDeploy:
     docker:
-     - image: "cimg/node:14.15"
+  - image: "cimg/node:14.15"
     steps:
       - eb/setup
       - aws-cli/setup
       - checkout
       - node/install:
           node-version: '14.15'
-       # Use root level package.json to install dependencies in the frontend app
+      # Use root level package.json to install dependencies in the frontend app
       - run:
           name: print node and npm versions
           command: |
@@ -29,10 +29,10 @@ jobs:
       - run:
           name: API build; Build www folder
           command: npm run api:build      
-       - run:
+      - run:
           name: API Deploy (EB CLI)
           command: npm run api:deploy
-       - run:
+      - run:
           name: Front-End Instal Depnedencies
           command: npm run frontend:install          
       - run:
