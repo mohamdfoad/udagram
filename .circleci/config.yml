@@ -6,15 +6,15 @@ orbs:
   aws-cli: circleci/aws-cli@3.1.1
   # different jobs are calles later in the workflows sections
 jobs:
-  buildWDeploy:
-    docker:
+buildWDeploy:
+  docker:
   - image: "cimg/node:14.15"
     steps:
-      - eb/setup
-      - aws-cli/setup
-      - checkout
-      - node/install:
-          node-version: '14.15'
+    - eb/setup
+    - aws-cli/setup
+    - checkout
+    - node/install:
+      node-version: '14.15'
       # Use root level package.json to install dependencies in the frontend app
       - run:
           name: print node and npm versions
