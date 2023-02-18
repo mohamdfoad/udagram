@@ -29,7 +29,8 @@ jobs:
           command: npm run frontend:install
       - run:
           name: Front-End Lint 
-          command: echo "TODO: Lint the frontend"
+          command: |
+           echo "TODO: Lint the frontend"
       - run:
           name: Front-End Build (www angular folder) 
           command: npm run frontend:build
