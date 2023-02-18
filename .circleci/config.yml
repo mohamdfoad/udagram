@@ -8,19 +8,14 @@ orbs:
 jobs:
   buildWDeploy:
     docker:
-      # the base image can run most needed actions with orbs
-      - image: "cimg/node:14.15"
+           - image: "cimg/node:14.15"
     steps:
-          # install node and checkout code
-     
       - eb/setup
       - aws-cli/setup
       - checkout
-      
       - node/install:
           node-version: '14.15'         
- 
-      # Use root level package.json to install dependencies in the frontend app
+       # Use root level package.json to install dependencies in the frontend app
       - run:
           name: print node and npm versions
           command: |
@@ -41,25 +36,17 @@ jobs:
        - run:
           name: Front-End Instal Depnedencies
           command: npm run frontend:install          
-           
       - run:
           name: Front-End Lint
           command: |
           npm run frontend:lint
-     
       - run:
           name: Front-End Build (www angular folder)
           command: npm run frontend:build
-            
-    
       - run:
           name: Front-End Deploy to S3 Bucket
           command: |
            npm run frontend:deploy
-           
-
- 
-
 workflows:
   udagram:
     jobs:
