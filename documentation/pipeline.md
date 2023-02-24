@@ -19,3 +19,19 @@ instructs the order of execution of the only job `buildWDeploy`
 
 ## Diagram
 Please refer to file `./documentation/screencaps/pipeline.png`
+
+# Modifications
+## Better organized screencaps folder
+localhost -> contains screencaps for local hosting
+AWS       -> contains  screencaps for amazon web services EB,S3,RDS
+circleci  -> contains all circle ci dashboard, settings, secrets... etc.
+
+## Config.yml 
+added the fiter as requested for the main branch (trunk)
+
+## Badge
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mohamdfoad/udagram/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mohamdfoad/udagram/tree/main)
+
+## Application URL/FQDN
+http://uda-frontend-bucket.s3-website-us-east-1.amazonaws.com/home
+
