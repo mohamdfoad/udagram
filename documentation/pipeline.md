@@ -33,5 +33,5 @@ added the fiter as requested for the main branch (trunk)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/mohamdfoad/udagram/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mohamdfoad/udagram/tree/main)
 
 ## Application URL/FQDN
-http://uda-frontend-bucket.s3-website-us-east-1.amazonaws.com/home
+http://uda-frontend-bucket.s3-website-us-east-1.amazonaws.com
 
