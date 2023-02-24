@@ -40,4 +40,9 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - buildWDeploy     
+      - buildWDeploy:
+          filters:
+              branches:
+                only: main
+
+
